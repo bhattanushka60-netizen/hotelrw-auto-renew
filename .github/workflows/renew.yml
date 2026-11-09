@@ -104,3 +104,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY: ${{ github.repository }}
           REF_NAME: ${{ github.ref_name }}
+
+
+                - name: Send Hotel RW Database Backup
+        run: |
+          curl -s "https://hotelrw.pythonanywhere.com/api/trigger_backup?token=hotelrw_secure_backup_2026"
